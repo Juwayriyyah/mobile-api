@@ -6,7 +6,17 @@ const User = require("../models/User");
 router.get("/", (req, res) => {
   res.send("Users route working");
 });
+app.get("/hello-api-json") , (req, res)=> {
+    res.send ("Hello world, welcome to Js backend programming!")
+};
 
+app.get("/hello-api-jso", (req, res)=> {
+    res.send({greeting: "Hello world! from backend and server-side"})
+});
+
+app.listen(PORT, ()=>{
+   console.log ("Hello world API app listening on port  "+PORT)
+});
 // CREATE
 router.post("/", async (req, res) => {
   const user = new User(req.body);
